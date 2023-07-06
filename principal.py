@@ -9,5 +9,5 @@ if __name__ == "__main__":
     dataproveedores={'data':[]}
     datacompras={'data':[]}
     dataventas={'data':[]}
+    clientes.MainMenu()
 
-    print(clientes.CreateData())
