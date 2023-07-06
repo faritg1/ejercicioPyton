@@ -1,6 +1,6 @@
 import json
 import os
-def crearInfo(args : tuple):
+def crearInfo(*args):
     if(checkFile(args[0]) == False):
         with open('data/'+args[0], "w") as write_file:
                 json.dump(args[1], write_file,indent = 4)
