@@ -16,6 +16,10 @@ def crearInfo(*args):
             # convert back to json.
             json.dump(file_data, file, indent = 4)
             file.close()
+def EditarData(*args):
+        with open('data/'+args[0], "w") as write_file:
+            json.dump(args[1], write_file,indent = 4)
+            write_file.close()
 def LoadInfo(fileName):
         if(checkFile(fileName) == True):
             with open('data/'+fileName, "r") as read_file:
