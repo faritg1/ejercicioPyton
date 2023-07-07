@@ -17,6 +17,8 @@ def LoadInfoCliente():
 def MainMenu():
     os.system("clear")
     isCliRun = True
+    if(core.checkFile("clientes.json")):
+        diccCliente = core.LoadInfo("clientes.json")
     os.system("clear")
     print('+','-'*55,'+')
     print("|{:^16}{}{:^15}|".format(' ','ADMINISTRACION DE CLIENTES',' '))
@@ -26,7 +28,7 @@ def MainMenu():
     print("3. Editar cliente")
     print("4. Eliminar cliente")
     print("5. Regresar menu principal")
-    opcion =int(input(":)_"))
+    opcion =int(input(": "))
     if (opcion == 1):
         data ={
             "id":input("Ingrese el Id del cliente :"),
@@ -41,13 +43,13 @@ def MainMenu():
         print('+','-'*49,'+')
         print("|{:^16}{}{:^15}|".format(' ','BUSCADOR DE CLIENTES',' '))
         print('+','-'*49,'+')
-        cliSearch = input("Ingrese el codigo del cliente a buscar:")
+        cliSearch = input("Ingrese el codigo del cliente a buscar: ")
         for i,item in enumerate(diccCliente["data"]):
             if cliSearch in item["id"]:
                 print(f'Id cliente : {item["id"]}')
                 print(f'Nombre cliente : {item["nombre"].upper()}')
                 print(f'Email cliente : {item["email"]}')
-        os.system("pause")
+                input("")
     elif (opcion == 3):
         os.system("clear")
         print('+','-'*49,'+')
@@ -64,7 +66,7 @@ def MainMenu():
         print('+','-'*49,'+')
         print("|{:^16}{}{:^15}|".format(' ','ELIMINACION DE CLIENTES',' '))
         print('+','-'*49,'+')
-        cliSearch = input("Ingrese el codigo del cliente a editar:")
+        cliSearch = input("Ingrese el codigo del cliente a eliminar:")
         for i,item in enumerate(diccCliente["data"]):
             if cliSearch in item["id"]:
                 itemDel = diccCliente["data"].pop(i)

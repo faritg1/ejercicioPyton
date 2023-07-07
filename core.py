@@ -1,10 +1,10 @@
 import json
 import os
-def crearInfo(*args):
+def crearInfo(*args : tuple):
     if(checkFile(args[0]) == False):
         with open('data/'+args[0], "w") as write_file:
-                json.dump(args[1], write_file,indent = 4)
-                write_file.close()
+            json.dump(args[1], write_file,indent = 4)
+            write_file.close()
     else:
         with open('data/'+args[0],'r+') as file:
             # First we load existing data into a dict.
