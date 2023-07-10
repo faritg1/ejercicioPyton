@@ -1,11 +1,18 @@
 import core
 import os
-def CreateData(*args):
-    return core.LoadInfo("clientes.json")
+
+diccProveedor = {"data":[]}
+
+def loadInfoProveedor():
+    global diccProveedor
+    if (core.checkFile("proveedor.json")):
+        diccProveedor = core.LoadInfo("proveedor.json")
+    else: 
+        core.crearInfo("proveedor.json",diccProveedor)
 
 def MainMenu():
     os.system("clear")
-    isCliRun = True
+    isProveeRun = True
     os.system("clear")
     print('+','-'*55,'+')
     print("|{:^14}{}{:^14}|".format(' ','ADMINISTRACION DE PROVEEDORES',' '))
@@ -15,18 +22,59 @@ def MainMenu():
     print("3. Editar")
     print("4. Eliminar")
     print("5. Regresar menu principal")
-    opcion =int(input(":)_"))
+    opcion =int(input(": "))
     if (opcion == 1):
-        pass
+        data ={
+            "id":input("Ingrese el Id del proveedor :"),
+            "nombre":input("Ingrese el Nombre del proveedor :"),
+            "email":input("Ingrese el Email del proveedor :"),
+        }
+        diccProveedor["data"].append(data)
+        core.crearInfo("proveedor.json",data)
     elif (opcion == 2):
-        pass
+        os.system("clear")
+        print('+','-'*55,'+')
+        print("|{:^16}{}{:^15}|".format(' ','BUSCAR PROVEEDOR',' '))
+        print('+','-'*55,'+')
+
+        proveeSearch = input("Ingrese el codigo del proveedor a buscar: ")
+
+        for i,item in enumerate(diccProveedor["data"]):
+            if proveeSearch in item["id"]:
+                print(f'Id del proveedor: {item["id"]}')
+                print(f'Nombre del proveedor: {item["nombre"]}')
+                print(f'Email del proveedor: {item["email"]}')
+                input("")
     elif (opcion == 3):
-        pass
+        os.system("clear")
+        print('+','-'*55,'+')
+        print("|{:^16}{}{:^15}|".format(' ','EDITAR PROVEEDOR',' '))
+        print('+','-'*55,'+')
+
+        proveeSearch = input("Ingrese el codigo del proveedor a editar: ")
+
+        for i,item in enumerate(diccProveedor["data"]):
+            if proveeSearch in item["id"]:
+                item["nombre"] = item("Ingrese el nuevo nombre del proveedor o presione ENTER para omitir") or item["nombre"]
+
+                item["email"] = item("Ingrese el nuevo email del proveedor o presione ENTER para omitir") or item["email"]
+
+                core.EditarData("proveedores.json",diccProveedor)
     elif (opcion == 4):
-        pass
+        os.system("clear")
+        print('+','-'*49,'+')
+        print("|{:^16}{}{:^15}|".format(' ','ELIMINACION DE PROVEDDOR',' '))
+        print('+','-'*49,'+')
+
+        proveeSearch = input("Ingrese el codigo del proveedor a eliminar: ")
+        for i,item in enumerate(diccProveedor["data"]):
+            if proveeSearch in item["id"]:
+                itemDel = diccProveedor["data"].pop(i)
+                core.EditarData("proveedores.json",diccProveedor)
+                input("Eliminado correctamente")
     elif (opcion == 5):
-        isCliRun = False
-    if (isCliRun):
+        isProveeRun = False
+    if (isProveeRun):
         MainMenu()
 
     

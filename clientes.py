@@ -35,7 +35,7 @@ def MainMenu():
             "nombre":input("Ingrese el Nombre del cliente :"),
             "email":input("Ingrese el Email del cliente :"),
         }
-
+        
         core.crearInfo("clientes.json",data)
         
     elif (opcion == 2):
