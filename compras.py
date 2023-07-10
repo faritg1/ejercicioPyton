@@ -15,7 +15,7 @@ def MainMenu():
     print("3. Devolución")
     print("4. Anular factura de compra")
     print("5. Regresar menu principal")
-    opcion =int(input(":)_"))
+    opcion =int(input(": "))
     if (opcion == 1):
         pass
     elif (opcion == 2):

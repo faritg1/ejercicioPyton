@@ -49,7 +49,7 @@ def mainMenu():
         producSearch = input("Ingrese el codigo del cliente a buscar: ")
 
         for i,item in enumerate(diccProducto["data"]):
-            if producSearch in item["id"]:
+            if producSearch == item["id"]:
                 print(f'Id del producto: {item["id"]}')
                 print(f'Nombre del producto: {item["nombre"]}')
                 print(f'Stock minimo del producto: {item["stockMin"]}')
@@ -68,7 +68,7 @@ def mainMenu():
         producSearch = input("Ingrese el codigo del producto a editar: ")
 
         for i,item in enumerate(diccProducto["data"]):
-            if producSearch in item["id"]:
+            if producSearch == item["id"]:
                 item["nombre"] = input("Ingrese el nuevo nombre del producto o presione ENTER para omitir: ") or item["nombre"]
                 item["stockMin"] = input("Ingrese el nuevo stock minimo del producto o presione ENTER para omitir: ") or item["stockMin"]
                 item["stockMax"] = input("Ingrese el nuevo stock maximo del producto o presione ENTER para omitir: ") or item["stockMax"]
@@ -84,7 +84,7 @@ def mainMenu():
 
         producSearch = input("ingrese el codigo del producto: ")
         for i,item in enumerate(diccProducto["data"]):
-            if producSearch in item["id"]:
+            if producSearch == item["id"]:
                 print("1.Activar\n2.Inactivar")
                 diccProducto["data"][i]["estado"] = True if int(input(":")) == 1 else False 
                 core.EditarData("productos.json",diccProducto)

@@ -9,6 +9,16 @@
             "valorCompra": 3000.0,
             "valorVenta": 4444444.0,
             "estado": true
+        },
+        {
+            "id": "1234",
+            "nombre": "sadsad",
+            "stockMin": 33,
+            "stockMax": "66",
+            "cantidad": 0,
+            "valorCompra": 2222.0,
+            "valorVenta": 3444.0,
+            "estado": false
         }
     ]
 }

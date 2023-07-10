@@ -22,7 +22,7 @@ if __name__ == "__main__":
         print("4. Gestion de Compras")
         print("5. Gestion de ventas")
         print("6. Terminar")
-        opcion = int(input(":)_"))
+        opcion = int(input(": "))
         if (opcion == 1):
             clientes.LoadInfoCliente()
             clientes.MainMenu()
@@ -30,6 +30,7 @@ if __name__ == "__main__":
             productos.loadInfoProduct()
             productos.mainMenu()
         elif (opcion == 3):
+            proveedores.loadInfoProveedor()
             proveedores.MainMenu()
         elif (opcion == 4):
             compras.MainMenu()

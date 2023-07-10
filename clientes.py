@@ -45,11 +45,12 @@ def MainMenu():
         print('+','-'*49,'+')
         cliSearch = input("Ingrese el codigo del cliente a buscar: ")
         for i,item in enumerate(diccCliente["data"]):
-            if cliSearch in item["id"]:
+            if cliSearch == item["id"]:
                 print(f'Id cliente : {item["id"]}')
                 print(f'Nombre cliente : {item["nombre"].upper()}')
                 print(f'Email cliente : {item["email"]}')
                 input("")
+
     elif (opcion == 3):
         os.system("clear")
         print('+','-'*49,'+')
@@ -61,6 +62,7 @@ def MainMenu():
                 item["nombre"] = input("Ingrese en nuevo nombre o presione enter para omitir :") or item["nombre"]
                 item["email"] = input("Ingrese en nuevo email o presione enter para omitir :") or item["email"]
                 core.EditarData("clientes.json",diccCliente)
+                
     elif (opcion == 4):
         os.system("clear")
         print('+','-'*49,'+')
@@ -68,7 +70,7 @@ def MainMenu():
         print('+','-'*49,'+')
         cliSearch = input("Ingrese el codigo del cliente a eliminar:")
         for i,item in enumerate(diccCliente["data"]):
-            if cliSearch in item["id"]:
+            if cliSearch == item["id"]:
                 itemDel = diccCliente["data"].pop(i)
                 core.EditarData("clientes.json",diccCliente)
                 # os.system("pause")

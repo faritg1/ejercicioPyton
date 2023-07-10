@@ -40,7 +40,7 @@ def MainMenu():
         proveeSearch = input("Ingrese el codigo del proveedor a buscar: ")
 
         for i,item in enumerate(diccProveedor["data"]):
-            if proveeSearch in item["id"]:
+            if proveeSearch == item["id"]:
                 print(f'Id del proveedor: {item["id"]}')
                 print(f'Nombre del proveedor: {item["nombre"]}')
                 print(f'Email del proveedor: {item["email"]}')
@@ -54,7 +54,7 @@ def MainMenu():
         proveeSearch = input("Ingrese el codigo del proveedor a editar: ")
 
         for i,item in enumerate(diccProveedor["data"]):
-            if proveeSearch in item["id"]:
+            if proveeSearch == item["id"]:
                 item["nombre"] = item("Ingrese el nuevo nombre del proveedor o presione ENTER para omitir") or item["nombre"]
 
                 item["email"] = item("Ingrese el nuevo email del proveedor o presione ENTER para omitir") or item["email"]
