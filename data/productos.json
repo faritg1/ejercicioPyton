@@ -1,0 +1,14 @@
+{
+    "data": [
+        {
+            "id": "333",
+            "nombre": "fff",
+            "stockMin": 5,
+            "stockMax": 9,
+            "cantidad": 0,
+            "valorCompra": 3000.0,
+            "valorVenta": 4444444.0,
+            "estado": true
+        }
+    ]
+}

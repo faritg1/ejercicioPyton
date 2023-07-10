@@ -27,7 +27,8 @@ if __name__ == "__main__":
             clientes.LoadInfoCliente()
             clientes.MainMenu()
         elif (opcion == 2):
-            pass
+            productos.loadInfoProduct()
+            productos.mainMenu()
         elif (opcion == 3):
             proveedores.MainMenu()
         elif (opcion == 4):

@@ -56,7 +56,7 @@ def mainMenu():
                 print(f'Stock maximo del producto: {item["stockMax"]}')
                 print(f'Valor de compra del producto: {item["valorCompra"]}')
                 print(f'VAlor de venta del producto: {item["valorVenta"]}')
-                print(f'Id del producto: {item["estado"]}')
+                print(f'Estado del producto: {item["estado"]}')
                 input("")
 
     elif(opcion == 3):
@@ -65,7 +65,7 @@ def mainMenu():
         print("|{:^16}{}{:^15}|".format(' ','EDITAR PRODUCTO',' '))
         print('+','-'*55,'+')
 
-        producSearch = input("Ingrese el codigo del cliente a editar: ")
+        producSearch = input("Ingrese el codigo del producto a editar: ")
 
         for i,item in enumerate(diccProducto["data"]):
             if producSearch in item["id"]:
@@ -74,6 +74,26 @@ def mainMenu():
                 item["stockMax"] = input("Ingrese el nuevo stock maximo del producto o presione ENTER para omitir: ") or item["stockMax"]
                 item["valorCompra"] = input("Ingrese el nuevo valor de compra del producto o presione ENTER para omitir: ") or item["valorCompra"]
                 item["valorVenta"] = input("Ingrese el nuevo valor de venta del producto o presione ENTER para omitir: ") or item["valorVenta"]
+                core.EditarData("productos.json",diccProducto)
+
+    elif(opcion == 4):
+        os.system("clear")
+        print('+','-'*55,'+')
+        print("|{:^16}{}{:^15}|".format(' ','Activar o Inactivar',' '))
+        print('+','-'*55,'+')
+
+        producSearch = input("ingrese el codigo del producto: ")
+        for i,item in enumerate(diccProducto["data"]):
+            if producSearch in item["id"]:
+                print("1.Activar\n2.Inactivar")
+                diccProducto["data"][i]["estado"] = True if int(input(":")) == 1 else False 
+                core.EditarData("productos.json",diccProducto)
+    
+    elif(opcion == 4):
+        isProducRun = False
+    
+    if(isProducRun):
+        mainMenu()
 
 
 
