@@ -56,7 +56,6 @@ def MainMenu():
         for i,item in enumerate(diccProveedor["data"]):
             if proveeSearch == item["id"]:
                 item["nombre"] = item("Ingrese el nuevo nombre del proveedor o presione ENTER para omitir") or item["nombre"]
-
                 item["email"] = item("Ingrese el nuevo email del proveedor o presione ENTER para omitir") or item["email"]
 
                 core.EditarData("proveedores.json",diccProveedor)
@@ -77,4 +76,3 @@ def MainMenu():
     if (isProveeRun):
         MainMenu()
 
-    

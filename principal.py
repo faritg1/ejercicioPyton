@@ -33,6 +33,7 @@ if __name__ == "__main__":
             proveedores.loadInfoProveedor()
             proveedores.MainMenu()
         elif (opcion == 4):
+            compras.LoadInfoCompra()
             compras.MainMenu()
         elif (opcion == 5):
             ventas.MainMenu()
@@ -41,7 +42,4 @@ if __name__ == "__main__":
         else:
             print("Opcion no valida....")
             os.system("pause")
-
-      
-    
 

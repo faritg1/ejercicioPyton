@@ -1,7 +1,12 @@
 import core
 import os
-def CreateData(*args):
-    return core.LoadInfo("clientes.json")
+
+"""
+Ventas : El programa debe permitir controlar las ventas a clientes la información que se tiene en
+cuenta en el proceso de compra es la siguiente: Nro factura venta, fecha venta, Nro Id del cliente, Nombre
+del cliente, total de factura y el detalle de venta (Cod producto, Cantidad vendida, valor unitario)
+"""
+
 
 def MainMenu():
     os.system("clear")

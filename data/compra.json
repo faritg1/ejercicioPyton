@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "id": "222",
+            "nroDocCompra": "123r",
+            "fechaCompra": "23",
+            "valorCompra": 30000.0,
+            "cantidadCompra": 5,
+            "estado": false
+        },
+        {
+            "id": "333",
+            "nroDocCompra": "4r",
+            "fechaCompra": "43",
+            "valorCompra": 44444.0,
+            "cantidadCompra": 5,
+            "estado": true
+        }
+    ]
+}
