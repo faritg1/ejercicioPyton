@@ -36,6 +36,7 @@ if __name__ == "__main__":
             compras.LoadInfoCompra()
             compras.MainMenu()
         elif (opcion == 5):
+            ventas.LoadInfoVenta()
             ventas.MainMenu()
         elif (opcion == 6):
             isActivate = False

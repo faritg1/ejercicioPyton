@@ -50,6 +50,8 @@ def MainMenu():
                 print(f'Nombre cliente : {item["nombre"].upper()}')
                 print(f'Email cliente : {item["email"]}')
                 input("")
+            else: 
+                return print("Cliente no existe"),input("")
 
     elif (opcion == 3):
         os.system("clear")
@@ -58,7 +60,7 @@ def MainMenu():
         print('+','-'*49,'+')
         cliSearch = input("Ingrese el codigo del cliente a editar:")
         for i,item in enumerate(diccCliente["data"]):
-            if cliSearch in item["id"]:
+            if cliSearch == item["id"]:
                 item["nombre"] = input("Ingrese en nuevo nombre o presione enter para omitir :") or item["nombre"]
                 item["email"] = input("Ingrese en nuevo email o presione enter para omitir :") or item["email"]
                 core.EditarData("clientes.json",diccCliente)

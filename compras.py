@@ -1,5 +1,6 @@
 import core
 import os
+import productos
 
 diccCompra = {"data":[]}
 
@@ -73,7 +74,6 @@ def MainMenu():
                 print("1.Generar Factura\n2.Anular Factura")
                 diccCompra["data"][i]["estado"] = True if int(input(":")) == 1 else False 
                 core.EditarData("compra.json",diccCompra)
-
 
     elif (opcion == 5):
         isCompraRun = False
